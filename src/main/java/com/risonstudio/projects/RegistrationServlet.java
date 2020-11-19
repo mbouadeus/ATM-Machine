@@ -31,6 +31,8 @@ public class RegistrationServlet extends HttpServlet {
 
 	    // Register new user and retrieve account key.
 	    String accountKey = AccountUtility.register(name, pin, initialCheckingBalance, initialSavingsBalance);
+	    
+	    if (accountKey == null) response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 	    response.getWriter().print(accountKey);
 	  }
 }

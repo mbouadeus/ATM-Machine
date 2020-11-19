@@ -29,6 +29,7 @@ public class AuthenticationServlet extends HttpServlet {
 	    // Authenticate user and retrieve account key.
 	    String accountKey = AccountUtility.authenticate(customerID, pin);
 	    
+	    if (accountKey == null) response.sendError(HttpServletResponse.SC_BAD_REQUEST);
 	    response.getWriter().print(accountKey);
 	  }
 }

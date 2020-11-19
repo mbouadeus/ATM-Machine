@@ -72,7 +72,7 @@ function validateDeposit(amount) {
 	const errors = [];
 
 	// Check if valid amount.
-	if (isNaN(amount) || Number(amount) < 0) {
+	if (!amount || isNaN(amount) || Number(amount) < 0) {
 		errors.push("Invalid deposit amount.");
 	}
 
@@ -90,7 +90,7 @@ function validateWithdraw(amount, balance) {
 	const errors = [];
 	
 	// Check if valid amount.
-	if (isNaN(amount) || Number(amount) < 0) {
+	if (!amount || isNaN(amount) || Number(amount) < 0) {
 		errors.push("Invalid withdraw amount.");
 	}
 	
@@ -118,7 +118,7 @@ function validateTransfer(from, to, amount, balance) {
 	}
 	
 	// Check if valid amount.
-	if (isNaN(amount) || Number(amount) < 0) {
+	if (!amount || isNaN(amount) || Number(amount) < 0) {
 		errors.push("Invalid transfer amount.");
 	}
 	

@@ -10,7 +10,7 @@ function validateRegistration(name, pin, checkBal, savBal) {
 	const errors = [];
 	
 	// Check if name is valid.
-	if (name === "" || !(/^[a-zA-Z\s]*$/.test(name))) {
+	if (!name || !(/^[a-zA-Z\s]*$/.test(name))) {
 		errors.push("Invalid Full Name.");
 	}
 	
@@ -20,12 +20,12 @@ function validateRegistration(name, pin, checkBal, savBal) {
 	}
 	
 	// Check if checking deposit amount is valid.
-	if (isNaN(checkBal) || Number(checkBal) < 0) {
+	if (!checkBal || isNaN(checkBal) || Number(checkBal) < 0) {
 		errors.push("Invalid Checking Deposit.");
 	}
 	
 	// Check if savings deposit amount is valid.
-	if (isNaN(savBal) || Number(savBal) < 0) {
+	if (!savBal || isNaN(savBal) || Number(savBal) < 0) {
 		errors.push("Invalid Savings Deposit.");
 	}
 
