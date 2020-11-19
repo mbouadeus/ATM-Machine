@@ -1,0 +1,16 @@
+main {
+	width: max-content;
+}
+
+.divider {
+	height: 100%;
+	width: 5px;
+	background-color: grey;
+	padding: .7rem 0;
+}
+
+.form-group {
+	padding-left: .3rem;
+	padding-right: .3rem;
+}
+
